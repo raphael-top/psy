@@ -1,0 +1,231 @@
+/* Comment */
+
+/*
+A comment
+which stretches
+over several
+lines
+*/
+
+/* --------------
+calling the fonts
+-------------- */
+
+/* --------------
+custom properties
+-------------- */
+
+/* colors */ /* to be refined or polished */
+
+:root {
+  --clr-text: hsl(43, 90%, 4%);
+  --clr-background: hsl(24, 20%, 95%);
+  --clr-background-test-good: hsl(10, 11%, 93%);
+  --clr-background-test-animalz: hsl(255, 29%, 97%);
+  --clr-accent: hsl(351, 82%, 19%);
+
+  /* --clr-primary: hsl(31, 100%, 50%);
+    --clr-secondary: hsl(45, 100%, 92%); */
+
+  --ff-body: "DM Sans", sans-serif;
+  --ff-headings: "DM Serif Display", serif;
+  --ff-body-test-1: Georgia, "Times New Roman", Times, serif;
+  --ff-body-test: system-ui;
+
+  --fs-300: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
+  --fs-400: clamp(1.35rem, 1.2048rem + 0.7261vw, 1.7675rem);
+  --fs-500: clamp(1.62rem, 1.3141rem + 1.5293vw, 2.4994rem);
+  --fs-600: clamp(1.9438rem, 1.3907rem + 2.7652vw, 3.5338rem);
+  --fs-700: clamp(2.3325rem, 1.4058rem + 4.6337vw, 4.9969rem);
+  --fs-800: clamp(2.7994rem, 1.3155rem + 7.4196vw, 7.0656rem);
+
+
+}
+
+@media (prefers-color-scheme: dark) /* to be refined or polished */ 
+
+root {
+  --clr-text: hsl(43, 90%, 4%);
+  --clr-background: hsl(45, 100%, 96%);
+  /* --clr-primary: hsl(31, 100%, 50%);
+    --clr-secondary: hsl(45, 100%, 92%);
+    --clr-accent: hsl(18, 59%, 40%); */
+}
+
+/* ---
+reset 
+--- */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light dark;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+/* --------------
+global styles
+-------------- */
+
+body {
+  font-family: var(--ff-body);
+  font-size: var(--fs-300);
+  color: #171717;
+  line-height: 1.7;
+  background-color: var(--clr-background-test-animalz);
+}
+
+h1, h2, h3 {
+    font-family: var(--ff-headings);
+    line-height: 1.1;
+}
+
+h1 {
+    font-size: var(--fs-600);
+    line-height: 1.3;
+    text-wrap: balance;
+}
+
+h2 {
+    font-size: var(--fs-500);
+    text-wrap: balance;
+}
+
+li {
+    margin-bottom: 16px
+}
+
+ul {
+    list-style-type: disc;
+}
+
+
+/* https://css-tricks.com/css-link-hover-effects/ */
+
+/* original color
+rgba(100, 200, 200, 1)
+*/
+
+a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  a {
+    background:
+      linear-gradient(
+        to right,
+        rgb(178, 63, 119),
+        rgb(178, 63, 119)
+      ),
+      linear-gradient(
+        to right,
+        rgba(255, 0, 0, 1),
+        rgba(255, 0, 180, 1),
+        rgba(0, 100, 200, 1)
+    );
+    background-size: 100% 3px, 0 3px;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 400ms;
+  }
+  
+  a:hover {
+    background-size: 0 3px, 100% 3px;
+  }
+/* https://css-tricks.com/css-link-hover-effects/ */
+
+::marker {
+    color: var(--clr-accent)
+}
+
+/* blockquote */
+
+.blockquote {
+
+}
+
+.blockquote-text {
+    font-family: var(--ff-headings);
+    font-size: medium;
+}
+
+hr {
+    border: solid;
+    color: var(--clr-accent)
+}
+
+/* blockquote */
+
+/* --------------
+composition - layout
+-------------- */
+
+.wrapper {
+  width: min(100% - 3rem, 55ch);
+  margin-inline: auto;
+}
+
+.wrapper-test {
+  width: min(70ch, 100% - 3rem);
+  margin-inline: auto;
+}
+
+.flow > * + * {
+  margin-top: var(--flow-space, 1em);
+}
+
+h1 {
+    /*--flow-space: 2em;*/
+    margin-top: 1em;
+}
+
+h2 {
+    --flow-space: 1.5em;
+}
+
+
+/* --------------
+logo
+-------------- */
+
+@media (max-width: 900px) {
+    .logo-hero {
+display: none;
+    }
+}
+
+@media (min-width: 900px) {
+    .logo-hero {
+        position: sticky;
+        top: .5rem;
+        margin-left: auto;
+        margin-right: 7em;
+    }
+}
+
+
+@media (min-width: 1100px) {
+    .logo {
+        position: sticky;
+        top: .5rem;
+        margin-left: 3em;
+        margin-right: auto;
+    }
+}
+
+/* --------------
+photo
+-------------- */
+
+.photo-cabinet {
+    border-radius: 5%;
+}
